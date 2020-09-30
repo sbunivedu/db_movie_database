@@ -22,7 +22,7 @@ For each movie count the number of genres and output the movie names along with 
 <details>
 <summary>answer</summary>
 
-```
+```sql
 SELECT id, name, count(DISTINCT genre)
 FROM movies, movies_genres
 WHERE id = movie_id
@@ -53,7 +53,7 @@ Find all the genres a particular movie is in.
 <details>
 <summary>answer</summary>
 
-```
+```sql
 SELECT name, genre
 FROM movies, movies_genres
 WHERE id = movie_id AND id = 122529;
@@ -121,7 +121,7 @@ Find actors who acted in the same movie under multiple (>1) roles. Show the movi
 <details>
 <summary>answer</summary>
 
-```
+```sql
 SELECT actor_id, first_name, last_name, movie_id, name, count(DISTINCT role)
 FROM actors, roles, movies
 WHERE actors.id = actor_id AND movies.id = movie_id
@@ -153,7 +153,7 @@ Find the roles an actor played in a movie.
 <details>
 <summary>answer</summary>
 
-```
+```sql
 SELECT first_name, last_name, name, role
 FROM actors, roles, movies
 WHERE actors.id = actor_id AND movies.id = movie_id
