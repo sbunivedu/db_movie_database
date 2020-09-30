@@ -198,6 +198,7 @@ Show all different "roles" in all movies in the database.
 
 <details>
 <summary>answer</summary>
+
 ```sql
 SELECT DISTINCT role
 FROM roles;
@@ -229,7 +230,7 @@ Show movies with multiple actors/actresses who acted in the same role.
 <details>
 <summary>answer</summary>
 
-```
+```sql
 SELECT movie_id, role, count(actor_id)
 FROM roles
 GROUP BY movie_id, role
